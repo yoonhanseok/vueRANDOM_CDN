@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <title>난수테이블 발생기 CDN</title>
+</head>
+<body>
+  <div id="app">
+    <div class="randomTable">
+      <h1>난수테이블 발생기</h1>
+        <div class="randomTableWrap">
+          <table>
+            <thead>
+              <tr>
+                <th>가</th>
+                <th>나</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="(DataOri, i) in tableData" :key="i" >
+                <td id="firstCol">{{ DataOri.DATAa }}</td>
+                <td id="secondCol">{{ DataOri.DATAb }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <button @click="[randomNum100(), clickNumber++]" >갱신<span>횟수: {{ clickNumber }}</span></button>
+      <div>
+        난수로 발생한 행의 개수는 {{ GeneratedRandomNum }}개 입니다!
+      </div>
+    </div>
+  </div>
+  <script src="./app.js"></script>
+  <script>
+    const mountedApp = app.mount('#app') // js 과 연결
+  </script>
+</body>
+</html>
