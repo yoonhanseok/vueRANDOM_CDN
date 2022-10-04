@@ -3,6 +3,14 @@
 <head>
   <meta charset="utf-8">
   <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+  <script>
+    if (typeof jQuery == 'undefined') {
+      var script = document.createElement('script');
+      script.type = "text/javascript";
+      script.src = "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js";
+      document.getElementsByTagName('head')[0].appendChild(script);
+  }
+  </script>
   <link rel="stylesheet" href="./style.css">
   <title>난수테이블 발생기 CDN</title>
 </head>
@@ -20,8 +28,8 @@
             </thead>
             <tbody>
               <tr v-for="(DataOri, i) in tableData" :key="i" >
-                <td id="firstCol">{{ DataOri.DATAa }}</td>
-                <td id="secondCol">{{ DataOri.DATAb }}</td>
+                <td id="firstCol" :class=DataOri.evenOdd>{{ DataOri.DATAa }}</td>
+                <td id="secondCol" :class=DataOri.evenOdd>{{ DataOri.DATAb }}</td>
               </tr>
             </tbody>
           </table>

@@ -81,3 +81,9 @@ button span {
   font-weight: 500;
   padding: 25px
 }
+
+.evenBlue {
+  background: #3b6697;
+  color: white;
+  border: #2c507a;
+}
